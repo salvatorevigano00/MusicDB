@@ -25,6 +25,7 @@ replay_pid*
 
 # Maven target directory
 target/
+!target/site/apidocs
 
 # IntelliJ IDEA files
 .idea/
