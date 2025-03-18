@@ -2,7 +2,7 @@
 Questo progetto è stato sviluppato come prova per l'IBM Academy 2025 il 18/03/2025
 
 ## Descrizione
-"music" è un'applicazione web Java completa progettata per la gestione di un database musicale. L'applicazione consente di archiviare e gestire informazioni dettagliate su artisti, album e tracce musicali. Utilizzando un'architettura a tre livelli (presentazione, logica di business e accesso ai dati), "music" offre un'interfaccia web intuitiva per interagire con il database MySQL sottostante.
+"music" è un'applicazione Java progettata per la gestione di un database musicale. L'applicazione consente di archiviare e gestire informazioni dettagliate su artisti, album e tracce musicali.
 
 Le funzionalità principali includono:
 * **Gestione degli artisti:** Aggiunta, modifica, eliminazione e ricerca di artisti.
