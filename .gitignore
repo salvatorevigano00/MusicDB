@@ -23,4 +23,42 @@
 hs_err_pid*
 replay_pid*
 
+# Maven target directory
 target/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Eclipse files
+.settings/
+.classpath
+.project
+
+# NetBeans files
+nbproject/private/
+build/
+
+# macOS files
+.DS_Store
+
+# Gradle files
+.gradle/
+build/
+
+# Configuration files with sensitive data
+*.properties # This will exclude all properties files, if you have non sensitive properties files, remove this line and add them individually.
+*.yml # This will exclude all yaml files, if you have non sensitive yaml files, remove this line and add them individually.
+application-*.properties # Exclude files like application-dev.properties
+application-*.yml # Exclude files like application-dev.yml
+
+# Temporary files created by operating systems and applications
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Other files that may contain sensitive data
+*.keystore
+*.p12

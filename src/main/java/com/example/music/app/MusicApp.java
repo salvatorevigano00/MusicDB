@@ -1,5 +1,6 @@
 package com.example.music.app;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -8,156 +9,118 @@ import com.example.music.dao.ArtistaDao;
 import com.example.music.dao.ArtistaDaoImpl;
 import com.example.music.dao.AlbumDao;
 import com.example.music.dao.AlbumDaoImpl;
+import com.example.music.dao.TracceDao;
+import com.example.music.dao.TracceDaoImpl;
 import com.example.music.model.Album;
 import com.example.music.model.Artista;
+import com.example.music.model.Tracce;
 
+/**
+ * La classe MusicApp è il main dell'applicazione musicale.
+ * In questa classe, inizializzo e testo le operazioni CRUD (Create, Read, Update, Delete)
+ * per le entità Artista, Album e Tracce utilizzando i rispettivi DAO (Data Access Objects).
+ * Gestisco anche la stampa dei risultati delle operazioni e la gestione delle eccezioni SQL.
+ */
 public class MusicApp {
     public static void main(String[] args) {
         try {
-            Artista pinkFloyd = new Artista();
-            pinkFloyd.setNome("Pink Floyd");
-            pinkFloyd.setNazione("Regno Unito");
-            pinkFloyd.setAnno_inizio(1965);
-            pinkFloyd.setData_inserimento(LocalDateTime.now());
-
             ArtistaDao artistaDao = new ArtistaDaoImpl();
-            Artista artistaPinkFloyd = artistaDao.save(pinkFloyd);
-
-            if (artistaPinkFloyd != null) {
-                System.out.println("Artista Pink Floyd salvato con successo: " + artistaPinkFloyd);
-            } else {
-                System.err.println("Errore nel salvataggio dell'artista Pink Floyd.");
-            }
-
-            Album album1 = new Album();
-            album1.setNome_album("The Dark Side of the Moon");
-            album1.setGenere("ROCK");
-            album1.setData_uscita(LocalDate.of(1973, 3, 1));
-            album1.setData_inserimento(LocalDateTime.now());
-            album1.setArtista(artistaPinkFloyd);
-
-            Album album2 = new Album();
-            album2.setNome_album("Wish You Were Here");
-            album2.setGenere("ROCK");
-            album2.setData_uscita(LocalDate.of(1975, 9, 12));
-            album2.setData_inserimento(LocalDateTime.now());
-            album2.setArtista(artistaPinkFloyd);
-
             AlbumDao albumDao = new AlbumDaoImpl();
-            Album albumSalvato1 = albumDao.save(album1);
-            Album albumSalvato2 = albumDao.save(album2);
+            TracceDao tracceDao = new TracceDaoImpl();
 
-            if (albumSalvato1 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato1);
-            } else {
-                System.err.println("Errore nel salvataggio del primo album di Pink Floyd.");
-            }
+            // Creo e salvo artisti
+            Artista artista1 = new Artista(null, 1970, "Queens", "UK", LocalDateTime.now(), null);
+            Artista artista2 = new Artista(null, 1965, "Pink Floyd", "UK", LocalDateTime.now(), null);
+            Artista artista3 = new Artista(null, 1960, "The Beatles", "UK", LocalDateTime.now(), null);
 
-            if (albumSalvato2 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato2);
-            } else {
-                System.err.println("Errore nel salvataggio del secondo album di Pink Floyd.");
-            }
+            artista1 = artistaDao.save(artista1);
+            artista2 = artistaDao.save(artista2);
+            artista3 = artistaDao.save(artista3);
 
-            Artista queen = new Artista();
-            queen.setNome("Queen");
-            queen.setNazione("Regno Unito");
-            queen.setAnno_inizio(1970);
-            queen.setData_inserimento(LocalDateTime.now());
+            // Creo e salvo album
+            Album album1 = new Album(null, "A Night at the Operas", "ROCK", LocalDate.of(1975, 11, 21), LocalDateTime.now(), null, artista1);
+            Album album2 = new Album(null, "The Dark Side of the Moon", "ROCK", LocalDate.of(1973, 3, 1), LocalDateTime.now(), null, artista2);
+            Album album3 = new Album(null, "Abbey Road", "ROCK", LocalDate.of(1969, 9, 26), LocalDateTime.now(), null, artista3);
 
-            Artista artistaQueen = artistaDao.save(queen);
+            album1 = albumDao.save(album1);
+            album2 = albumDao.save(album2);
+            album3 = albumDao.save(album3);
 
-            if (artistaQueen != null) {
-                System.out.println("Artista Queen salvato con successo: " + artistaQueen);
-            } else {
-                System.err.println("Errore nel salvataggio dell'artista Queen.");
-            }
+            // Creo e salvo tracce
+            Tracce traccia1_1 = new Tracce(null, "Bohemian Rhapsodys", album1, artista1, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia1_2 = new Tracce(null, "You're My Best Friend", album1, artista1, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia1_3 = new Tracce(null, "Love of My Life", album1, artista1, LocalDateTime.now(), LocalDateTime.now());
 
-            Album album3 = new Album();
-            album3.setNome_album("A Night at the Opera");
-            album3.setGenere("ROCK");
-            album3.setData_uscita(LocalDate.of(1975, 11, 21));
-            album3.setData_inserimento(LocalDateTime.now());
-            album3.setArtista(artistaQueen);
+            Tracce traccia2_1 = new Tracce(null, "Money", album2, artista2, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia2_2 = new Tracce(null, "Time", album2, artista2, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia2_3 = new Tracce(null, "Us and Them", album2, artista2, LocalDateTime.now(), LocalDateTime.now());
 
-            Album album4 = new Album();
-            album4.setNome_album("News of the World");
-            album4.setGenere("ROCK");
-            album4.setData_uscita(LocalDate.of(1977, 10, 28));
-            album4.setData_inserimento(LocalDateTime.now());
-            album4.setArtista(artistaQueen);
+            Tracce traccia3_1 = new Tracce(null, "Come Together", album3, artista3, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia3_2 = new Tracce(null, "Something", album3, artista3, LocalDateTime.now(), LocalDateTime.now());
+            Tracce traccia3_3 = new Tracce(null, "Here Comes the Sun", album3, artista3, LocalDateTime.now(), LocalDateTime.now());
 
-            Album albumSalvato3 = albumDao.save(album3);
-            Album albumSalvato4 = albumDao.save(album4);
+            traccia1_1 = tracceDao.save(traccia1_1);
+            traccia1_2 = tracceDao.save(traccia1_2);
+            traccia1_3 = tracceDao.save(traccia1_3);
 
-            if (albumSalvato3 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato3);
-            } else {
-                System.err.println("Errore nel salvataggio del primo album di Queen.");
-            }
+            traccia2_1 = tracceDao.save(traccia2_1);
+            traccia2_2 = tracceDao.save(traccia2_2);
+            traccia2_3 = tracceDao.save(traccia2_3);
 
-            if (albumSalvato4 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato4);
-            } else {
-                System.err.println("Errore nel salvataggio del secondo album di Queen.");
-            }
+            traccia3_1 = tracceDao.save(traccia3_1);
+            traccia3_2 = tracceDao.save(traccia3_2);
+            traccia3_3 = tracceDao.save(traccia3_3);
 
-            Artista beatles = new Artista();
-            beatles.setNome("Beatles");
-            beatles.setNazione("Regno Unito");
-            beatles.setAnno_inizio(1962);
-            beatles.setData_inserimento(LocalDateTime.now());
+            // Test ArtistaDao
+            System.out.println("\nTest ArtistaDao:");
+            System.out.println("Artista 1: " + artistaDao.findById(artista1.getId_artista()));
+            artista1.setNome("Queen");
+            artistaDao.update(artista1.getId_artista(), artista1);
+            System.out.println("Artista 1 Updated: " + artistaDao.findById(artista1.getId_artista()));
+            artistaDao.deleteById(artista3.getId_artista());
+            System.out.println("Artisti after delete: ");
+            artistaDao.findAll().forEach(System.out::println);
 
-            Artista artistaBeatles = artistaDao.save(beatles);
+            // Test AlbumDao
+            System.out.println("\nTest AlbumDao:");
+            System.out.println("Album 1: " + albumDao.findById(album1.getId_album()));
+            album1.setNome_album("A Night at the Opera");
+            albumDao.update(album1.getId_album(), album1);
+            System.out.println("Album 1 Updated: " + albumDao.findById(album1.getId_album()));
+            albumDao.deleteById(album3.getId_album());
+            System.out.println("Albums after delete: ");
+            albumDao.findAll().forEach(System.out::println);
 
-            if (artistaBeatles != null) {
-                System.out.println("Artista Beatles salvato con successo: " + artistaBeatles);
-            } else {
-                System.err.println("Errore nel salvataggio dell'artista Beatles.");
-            }
+            // Test TracceDao
+            System.out.println("\nTest TracceDao:");
+            System.out.println("Traccia 1_1: " + tracceDao.findById(traccia1_1.getId_traccia()));
+            traccia1_1.setNome_traccia("Bohemian Rhapsody");
+            tracceDao.update(traccia1_1.getId_traccia(), traccia1_1);
+            System.out.println("Traccia 1_1 Updated: " + tracceDao.findById(traccia1_1.getId_traccia()));
+            tracceDao.deleteById(traccia3_3.getId_traccia());
+            System.out.println("Tracce after delete: ");
+            tracceDao.findAll().forEach(System.out::println);
 
-            Album album5 = new Album();
-            album5.setNome_album("Abbey Road");
-            album5.setGenere("ROCK");
-            album5.setData_uscita(LocalDate.of(1969, 9, 26));
-            album5.setData_inserimento(LocalDateTime.now());
-            album5.setArtista(artistaBeatles);
-
-            Album album6 = new Album();
-            album6.setNome_album("Sgt. Pepper's Lonely Hearts Club Band");
-            album6.setGenere("ROCK");
-            album6.setData_uscita(LocalDate.of(1967, 5, 26));
-            album6.setData_inserimento(LocalDateTime.now());
-            album6.setArtista(artistaBeatles);
-
-            Album albumSalvato5 = albumDao.save(album5);
-            Album albumSalvato6 = albumDao.save(album6);
-
-            if (albumSalvato5 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato5);
-            } else {
-                System.err.println("Errore nel salvataggio del primo album dei Beatles.");
-            }
-
-            if (albumSalvato6 != null) {
-                System.out.println("Album salvato con successo: " + albumSalvato6);
-            } else {
-                System.err.println("Errore nel salvataggio del secondo album dei Beatles.");
-            }
-
+            // Stampa tutti gli artisti, album e tracce
+            System.out.println("\nArtisti:");
             Set<Artista> artisti = artistaDao.findAll();
-            System.out.println("\nLista artisti:");
-            for (Artista a : artisti) {
-                System.out.println(a);
+            for (Artista artista : artisti) {
+                System.out.println(artista);
             }
 
+            System.out.println("\nAlbum:");
             Set<Album> albums = albumDao.findAll();
-            System.out.println("\nLista album:");
-            for (Album al : albums) {
-                System.out.println(al);
+            for (Album album : albums) {
+                System.out.println(album);
             }
 
-        } catch (Exception e) {
+            System.out.println("\nTracce:");
+            Set<Tracce> tracce = tracceDao.findAll();
+            for (Tracce traccia : tracce) {
+                System.out.println(traccia);
+            }
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
