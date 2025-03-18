@@ -1,0 +1,48 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'/Users/salvatorevigano/.m2/repository/com/mysql/mysql-connector-j/9.2.0/mysql-connector-j-9.2.0.jar:/Users/salvatorevigano/.m2/repository/com/google/protobuf/protobuf-java/4.29.0/protobuf-java-4.29.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/salvatorevigano/eclipse-workspace/music/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Music WebAPP 1.0 API'
+-use
+-version
+-windowtitle
+'Music WebAPP 1.0 API'
+com.example.music.app
+com.example.music.config
+com.example.music.dao
+com.example.music.model
+/Users/salvatorevigano/.m2/repository/com/mysql/mysql-connector-j/9.2.0/mysql-connector-j-9.2.0.jar = 1737408432000
+/Users/salvatorevigano/.m2/repository/com/google/protobuf/protobuf-java/4.29.0/protobuf-java-4.29.0.jar = 1732740327000
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/.DS_Store = 1742309488851
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java = 1742309488850
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/tag-search-index.js = 1742312320333
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/overview-tree.html = 1742312320324
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/module-search-index.js = 1742312320332
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/index.html = 1742312320325
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/package-search-index.js = 1742312320332
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/index-all.html = 1742312320339
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/allpackages-index.html = 1742312320332
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/member-search-index.js = 1742312320333
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/overview-summary.html = 1742312320340
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/help-doc.html = 1742312320341
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/element-list = 1742312320290
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/search.html = 1742312320339
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/allclasses-index.html = 1742312320331
+/Users/salvatorevigano/eclipse-workspace/music/target/reports/apidocs/type-search-index.js = 1742312320333

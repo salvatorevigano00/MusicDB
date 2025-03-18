@@ -1,0 +1,11 @@
+com/example/music/config/MySQLConnection.class
+com/example/music/dao/TracceDaoImpl.class
+com/example/music/dao/AlbumDaoImpl.class
+com/example/music/model/Artista.class
+com/example/music/app/MusicApp.class
+com/example/music/dao/ArtistaDao.class
+com/example/music/model/Tracce.class
+com/example/music/model/Album.class
+com/example/music/dao/ArtistaDaoImpl.class
+com/example/music/dao/AlbumDao.class
+com/example/music/dao/TracceDao.class

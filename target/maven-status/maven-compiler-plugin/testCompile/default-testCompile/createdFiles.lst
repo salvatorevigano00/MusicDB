@@ -1,0 +1,9 @@
+com/example/test/music/dao/AlbumDaoImplTest.class
+com/example/test/music/model/ArtistaTest.class
+com/example/test/music/dao/TracceDaoImplTest.class
+com/example/test/music/model/AlbumTest.class
+com/example/music/app/MusicAppTest.class
+com/example/test/music/config/MySQLConnectionTest$1FakeConnection.class
+com/example/test/music/dao/ArtistaDaoImplTest.class
+com/example/test/music/config/MySQLConnectionTest.class
+com/example/test/music/model/TracceTest.class

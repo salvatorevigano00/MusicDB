@@ -1,0 +1,11 @@
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/app/MusicApp.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/config/MySQLConnection.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/AlbumDao.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/AlbumDaoImpl.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/ArtistaDao.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/ArtistaDaoImpl.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/TracceDao.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/dao/TracceDaoImpl.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/model/Album.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/model/Artista.java
+/Users/salvatorevigano/eclipse-workspace/music/src/main/java/com/example/music/model/Tracce.java

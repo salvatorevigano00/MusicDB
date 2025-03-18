@@ -24,7 +24,6 @@ hs_err_pid*
 replay_pid*
 
 # Maven target directory
-target/
 !target/reports/apidocs
 
 # IntelliJ IDEA files
