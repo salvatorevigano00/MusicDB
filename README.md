@@ -1,4 +1,4 @@
-# music
+# MusicDB
 Questo progetto è stato sviluppato come prova per l'IBM Academy 2025 il 18/03/2025
 
 ## Descrizione
