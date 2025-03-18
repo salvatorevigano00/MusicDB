@@ -23,7 +23,7 @@ Le funzionalità principali includono:
 ## Installazione
 1.  Clona il repository:
     ```bash
-    git clone <URL_del_tuo_repository>
+    git clone https://github.com/salvatorevigano00/MusicDB.git
     ```
 
 2.  Naviga nella directory del progetto:
@@ -33,7 +33,7 @@ Le funzionalità principali includono:
 
 3.  Configura la connessione al database MySQL:
     * Crea un database MySQL chiamato "music".
-    * Modifica il file `application.properties` nella directory `src/main/resources` con le tue credenziali di database (nel mio caso ho inserito direttamente le credenziali in `MySQLConnection`).
+    * Modifica il file `application.properties` nella directory `src/main/resources` con le tue credenziali di database (nel mio caso ho inserito direttamente le credenziali in `MySQLConnection`, ma è considerata una scelta completata sbagliata a livello di sicurezza).
   
 4.  Compila il progetto con Maven:
     ```bash
